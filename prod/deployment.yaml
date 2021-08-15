@@ -5,7 +5,7 @@ metadata:
   labels:
     name: production
 spec:
-  replicas: 4
+  replicas: 2
   minReadySeconds: 1
   strategy:
     rollingUpdate:
@@ -33,11 +33,11 @@ spec:
               mountPath: /usr/share/nginx/html          
           resources:
             requests:
-              memory: 500Mi
+              memory: 300Mi
               cpu: 500m
             limits:
-              memory: 1Gi
-              cpu: 1000m
+              memory: 600Mi
+              cpu: 800m
       #Na tolerations:
       #Na   - effect: "NoSchedule"
       #Na     key: "mysize"
