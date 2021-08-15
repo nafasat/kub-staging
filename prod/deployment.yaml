@@ -21,9 +21,16 @@ spec:
         type: front-node
         app: nginx-app
     spec:
+      volumes:
+        - name: volume
+          hostPath:
+            path: /opt/www
       containers:
         - name: nginx-container
           image: nginx:1.21.1
+          volumeMounts:
+            - name: volume
+              mountPath: /usr/share/nginx/html          
           resources:
             requests:
               memory: 500Mi
