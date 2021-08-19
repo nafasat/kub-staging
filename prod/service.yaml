@@ -3,11 +3,9 @@ kind: Service
 metadata:
   name: myfirstservice
   labels:
-    version: abc1
+    version: v2
 spec:
-  type: NodePort
   ports:
-    - nodePort: 32000
       port: 9000
       targetPort: 80
   selector:
