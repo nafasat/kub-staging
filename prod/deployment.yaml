@@ -5,7 +5,7 @@ metadata:
   labels:
     name: production
 spec:
-  replicas: 4
+  replicas: 2
   minReadySeconds: 1
   strategy:
     rollingUpdate:
@@ -28,6 +28,8 @@ spec:
       containers:
         - name: nginx-container
           image: nginx:1.20.1
+          ports:
+          - containerPort: 80
           volumeMounts:
             - name: volume
               mountPath: /usr/share/nginx/html          
