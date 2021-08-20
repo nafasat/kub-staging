@@ -12,7 +12,5 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          service:
-            name: myfirstservice
-            port:
-              number: 9000
+          serviceName: myfirstservice
+          servicePort: 80
