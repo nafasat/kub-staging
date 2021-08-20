@@ -5,6 +5,7 @@ metadata:
   labels:
     type: ingress-service
 spec:
+  ingressClassName: nginx
   rules:
   - host: example.com
     http:
