@@ -6,9 +6,9 @@ metadata:
     version: v2
 spec:
   ports:
-      port: 9000
-      targetPort: 80
-      protocol: TCP
-      name: http
+  - port: 9000
+    targetPort: 80
+    protocol: TCP
+    name: http
   selector:
-     type: front-node
+    type: front-node
