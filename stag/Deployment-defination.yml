@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deplyment-01
+  labels:
+    env: prod
+    tier: front-end
+spec:
+  template:
+    metadata:
+      name: reverse-proxy
+      labels:
+        env: prod-app
+        tier: front
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.9
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: front
